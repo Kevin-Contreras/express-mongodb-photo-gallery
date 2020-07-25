@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <title>imagen</title>
+  <style>
+    #clad{
+      background: rgb(216, 221, 220);
+    }
+  </style>
+</head>
+<body>
+    <div class="card text-dark shadow-lg" style="width: 350px; margin: auto; margin-top:15px;" id="clad">
+      <img src="/<%= dato.path  %> " class="card-img-top" style="height: 450px;" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><%= dato.titulo %> </h5>
+        <p class="card-text"><%=dato.Descripcion%> </p>
+        <a href="/delete/<%= dato._id %> " class="btn  btn-danger">Borrar</a>
+        <a href="<%= url  %> " class="btn  btn-success">Regresar</a>
+
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>insertar</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+  <style>
+    div{
+      margin: auto;
+      margin-top: 20px;
+    }
+    #file{
+      margin: 20px;
+    }
+    .form{
+      height: 300px;
+      width: 700px;
+      background: rgb(216, 215, 215);
+    }
+   
+  </style>
+  <div class="form"  >
+    <form action="/subir" method="POST" enctype="multipart/form-data">
+      <p>Titulo</p>
+      <input type="text" class="form-control" name="titulo" placeholder="Titulo...">
+      <p>Descripcion</p>
+        <div class="input-group">
+          <div class="input-group-prepend">
+          </div>
+          <textarea class="form-control" aria-label="With textarea" name="area"></textarea>
+          <input type="file" name="envio"  class="form-control-file" id="file">
+          <input type="submit" value="enviar" name="envios" class="btn btn-success btn-lg">
+          <a href="<%= url  %> " class="btn btn-info text-white">Regresar</a>
+        </div>
+      
+      
+    </form>
+  
+  </div>
+  
+</body>
+</html>

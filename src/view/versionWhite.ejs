@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    .card-columns{
+      margin-top:20px ;
+      margin-left:20px ;
+    }
+ @media (min-width: 200px) {
+    .card-columns {
+        column-count: 1;
+        position: absolute;
+        
+    }
+}
+
+@media (min-width: 768px) {
+    .card-columns {
+        column-count: 2;
+    }
+}
+
+@media (min-width: 992px) {
+    .card-columns {
+        column-count: 3;
+    }
+}
+
+@media (min-width: 1200px) {
+    .card-columns {
+        column-count: 4;
+    }
+}
+
+#cas{
+  border: none;
+}
+.a{
+  color:white;
+}
+.a:hover{
+  text-decoration: none;
+  color:white
+  
+}
+  </style>
+  <title>fotos</title>
+</head>
+<body>
+  <%- include("./parts/header") %> 
+  <nav class="navbar navbar-light bg-light">
+    <form  action="/white" class="form-inline" method="GET" enctype="application/x-www-form-urlencoded">
+      <input class="form-control mr-sm-2" type="text" name="titulo" placeholder="Search" >
+      <input type="submit" name="buscare" class="btn btn-outline-success my-2 my-sm-0">
+    </form>
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <button type="button" class="btn btn-secondary"><a href="/" class="a">Black</a></button>
+      <button type="button" class="btn btn-secondary"><a href="/white" class="a">White</a></button>
+    </div>
+  </nav>
+  <div class="card-columns " >
+  <% imagenes.forEach(element => {  %>
+   
+      <div class="card mb-3 shadow-lg" style="width: 18rem;" id="cas">
+        <img src="<%= element.path %>" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title"><%= element.titulo %> </h5>
+          <p class="card-text"><%= element.Descripcion %> </p>
+          <a href= "imagen/<%= element._id  %> " class="btn btn-info">VER IMAGEN</a>
+        </div>
+  
+      </div>
+
+    <% }) %>
+  </div>  
+  
